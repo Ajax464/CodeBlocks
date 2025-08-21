@@ -8,9 +8,9 @@ int main() {
     cout << "Enter the number of variables: ";
     cin >> n;
 
-    double mat[20][21];  // Augmented matrix
+    double mat[20][21];  
 
-    // Input augmented matrix
+    
     cout << "Enter the augmented matrix (coefficients and constants):" << endl;
     for (int i = 0; i < n; i++) {
         cout << "Row " << i + 1 << ": ";
@@ -18,10 +18,8 @@ int main() {
             cin >> mat[i][j];
         }
     }
-
-    // Gauss-Jordan elimination
     for (int i = 0; i < n; i++) {
-        // Make the pivot element 1
+        
         double pivot = mat[i][i];
         if (pivot == 0) {
             cout << "Math Error: Zero pivot encountered." << endl;
@@ -32,7 +30,7 @@ int main() {
             mat[i][j] /= pivot;
         }
 
-        // Make other elements in column zero
+        
         for (int k = 0; k < n; k++) {
             if (k == i) continue;
 
@@ -43,7 +41,6 @@ int main() {
         }
     }
 
-    // Output result
     cout << "\nSolution:\n";
     for (int i = 0; i < n; i++) {
         cout << "x" << i + 1 << " = " << fixed << setprecision(6) << mat[i][n] << endl;
@@ -51,3 +48,4 @@ int main() {
 
     return 0;
 }
+
